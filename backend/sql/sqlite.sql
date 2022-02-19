@@ -167,3 +167,7 @@ CREATE TABLE `waitlist_entry_fit` (
   CONSTRAINT `waitlist_entry_fit_ibfk_4` FOREIGN KEY (`implant_set_id`) REFERENCES `implant_set` (`id`),
   CONSTRAINT `waitlist_entry_fit_chk_1` CHECK ((`approved` in (0,1)))
 );
+
+INSERT INTO `character` (`id`, `name`) VALUES (467362264, 'Miles Forrester');
+INSERT INTO `admins` (`character_id`, `level`) VALUES (467362264, 'admin');
+INSERT INTO `waitlist` (`id`, `name`, `is_open`, `is_archived`) VALUES (1, 'Pooch', 0, 0);

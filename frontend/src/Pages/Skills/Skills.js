@@ -12,7 +12,7 @@ export function Skills() {
   const history = useHistory();
 
   var characterId = queryParams.get("character_id") || authContext.current.id;
-  var ship = queryParams.get("ship") || "Vindicator";
+  var ship = queryParams.get("ship") || "Vedmak";
 
   const [basicInfo] = useApi(`/api/pilot/info?character_id=${characterId}`);
 

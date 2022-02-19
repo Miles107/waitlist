@@ -27,29 +27,86 @@ alternatives:
   - - "'Peace' Large Remote Armor Repairer"
 
 - - - Blood Xray L
-    - Sanshas Xray L
-  - - Imperial Navy Xray L
-  - - True Sanshas Xray L
     - Dark Blood Xray L
+  - - Sanshas Xray L
+    - True Sanshas Xray L
+  - - Imperial Navy Xray L
 
 - - - Guristas Antimatter Charge L
     - Shadow Antimatter Charge L
-  - - Caldari Navy Antimatter Charge L
-    - Federation Navy Antimatter Charge L
-  - - Guardian Antimatter Charge L
     - Dread Guristas Antimatter Charge L
+  - - Caldari Navy Antimatter Charge L
+  - - Federation Navy Antimatter Charge L
+  - - Guardian Antimatter Charge L
 
-- - - Federation Navy Hobgoblin
+- - - Hobgoblin I
+  - - Acolyte I
+  - - Warrior I
+  - - Hornet I
+  - - Federation Navy Hobgoblin
+  - - Imperial Navy Acolyte
+  - - Republic Fleet Warrior
+  - - Caldari Navy Hornet
   - - Hobgoblin II
+  - - Acolyte II
+  - - Warrior II
+  - - Hornet II
   - - "'Augmented' Hobgoblin"
+  - - "'Augmented' Acolyte"
+  - - "'Augmented' Warrior"
+  - - "'Augmented' Hornet"
 
-- - - Federation Navy Hammerhead
+- - - Hammerhead I
+  - - Infiltrator I
+  - - Valkyrie I
+  - - Vespa I
+  - - Federation Navy Hammerhead
+  - - Imperial Navy Infiltrator
+  - - Republic Fleet Valkyrie
+  - - Caldari Navy Vespa
   - - Hammerhead II
+  - - Infiltrator II
+  - - Valkyrie II
+  - - Vespa II
   - - "'Augmented' Hammerhead"
+  - - "'Augmented' Infiltrator"
+  - - "'Augmented' Valkyrie"
+  - - "'Augmented' Vespa"
 
-- - - Federation Navy Ogre
+- - - Ogre I
+  - - Praetor I
+  - - Berserker I
+  - - Wasp I
+  - - Federation Navy Ogre
+  - - Imperial Navy Praetor
+  - - Republic Fleet Berserker
+  - - Caldari Navy Wasp
   - - Ogre II
+  - - Praetor II
+  - - Berserker II
+  - - Wasp II
   - - "'Augmented' Ogre"
+  - - "'Augmented' Praetor"
+  - - "'Augmented' Berserker"
+  - - "'Augmented' Wasp"
+
+- - - Large Explosive Armor Reinforcer I
+  - - Large Explosive Armor Reinforcer II
+
+- - - Expanded Probe Launcher II
+    - Sisters Expanded Probe Launcher
+
+- - - Heavy Entropic Disintegrator I
+  - - Heavy Compact Entropic Disintegrator
+  - - Heavy Scoped Entropic Disintegrator
+  - - Heavy Entropic Disintegrator II
+    - Veles Heavy Entropic Disintegrator
+
+- - - Meson Exotic Plasma M
+    - Mystic M
+  - - Baryon Exotic Plasma M
+  - - Tetryon Exotic Plasma M
+    - Occult M
 
 from_meta: # Automagically determine alternatives
 - base: Sensor Booster II
@@ -112,6 +169,22 @@ from_attribute:
   - Thermal Energized Membrane II
   attribute: 987 # Thermal
   reverse: true
+- base:
+  - EM Armor Hardener II
+  attribute: 984 # EM
+  reverse: true
+- base:
+  - Explosive Armor Hardener II
+  attribute: 985 # Explosive
+  reverse: true
+- base:
+  - Kinetic Armor Hardener II
+  attribute: 986 # Kinetic
+  reverse: true
+- base:
+  - Thermal Armor Hardener II
+  attribute: 987 # Thermal
+  reverse: true
 
 accept_t1: # Meta information missing, but luckily we can just match it naively
 - Heavy Shield Maintenance Bot II
@@ -129,8 +202,6 @@ identification: # Modules/groups we use to look at to figure out what we're flyi
 - Damage Control II
 - 1600mm Steel Plates II
 - Multispectrum Energized Membrane II
-- Large Explosive Armor Reinforcer I
-- Large Explosive Armor Reinforcer II
 - Large EM Armor Reinforcer I
 - Large Thermal Armor Reinforcer I
 - Large Kinetic Armor Reinforcer I

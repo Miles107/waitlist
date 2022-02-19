@@ -1,406 +1,67 @@
 plans:
 
-- name: TDF_VINDI_BASIC
+- name: Vedmak (Vedmak fleet)
   description: >
-    MEGA > VINDI_STARTER > VINDI_BASIC: This skill plan will train you from starter Megathron in to the basic Vindi fit, this will get you out of starter queue.
+    VED_VEDMAK: The killer.
   plan:
-  - type: tank
-    from: starter
   - type: fit
-    hull: Megathron
-    fit: TDF_MEGA_STARTER
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_STARTER
-  - type: tank
-    from: min
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_BASIC
-  - type: skills
-    from: Vindicator
-    tier: min
+    hull: Vedmak
+    fit: VED_VEDMAK
 
-- name: TDF_NIGHTMARE_BASIC
+- name: Guardian (Vedmak fleet)
   description: >
-    MEGA > NM_STARTER > NM_BASIC: This skill plan will train you from starter Megathron in to the basic Nightmare fit, this will get you out of starter queue.
+    VED_GUARDIAN: The savior.
   plan:
-  - type: tank
-    from: starter
-  - type: fit
-    hull: Megathron
-    fit: TDF_MEGA_STARTER
-  - type: fit
-    hull: Nightmare
-    fit: TDF_NM_STARTER
-  - type: tank
-    from: min
-  - type: fit
-    hull: Nightmare
-    fit: TDF_NM_BASIC
-  - type: skills
-    from: Nightmare
-    tier: min
-
-- name: TDF_VINDI_ELITE
-  description: >
-    MEGA > VINDI_STARTER > VINDI_BASIC > VINDI_ADVANCED > VINDI_ELITE: This skill plan will train you from starter Megathron through to the elite Vindi fit.
-  plan:
-  - type: tank
-    from: starter
-  - type: fit
-    hull: Megathron
-    fit: TDF_MEGA_STARTER
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_STARTER
-  - type: tank
-    from: min
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_BASIC
-  - type: skills
-    from: Vindicator
-    tier: min
-  - type: skill
-    from: Cybernetics
-    level: 4
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_ELITE_HYBRID
-  - type: skills
-    from: Vindicator
-    tier: elite
-
-- name: TDF_KRONOS_ELITE
-  description: >
-    MEGA > VINDI_BASIC > VINDI_ADVANCED > KRONOS_ELITE: This skill plan will train you from starter Megathron through to the elite Kronos fit.
-  plan:
-  - type: tank
-    from: starter
-  - type: fit
-    hull: Megathron
-    fit: TDF_MEGA_STARTER
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_STARTER
-  - type: tank
-    from: min
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_BASIC
-  - type: skills
-    from: Vindicator
-    tier: min
-  - type: tank
-    from: bastion
-  - type: skill
-    from: Cybernetics
-    level: 4
-  - type: skills
-    from: Kronos
-    tier: min
-  - type: fit
-    hull: Kronos
-    fit: TDF_KRONOS_ELITE_HYBRID_BASTION
-  - type: skills
-    from: Kronos
-    tier: elite
-
-- name: TDF_PALADIN_ELITE
-  description: >
-    MEGA > NM_STARTER > NM_BASIC > NM_ADVANCED > PALLY_ELITE: This skill plan will train you from starter Megathron through to the elite Paladin fit.
-  plan:
-  - type: tank
-    from: starter
-  - type: fit
-    hull: Megathron
-    fit: TDF_MEGA_STARTER
-  - type: fit
-    hull: Nightmare
-    fit: TDF_NM_STARTER
-  - type: tank
-    from: min
-  - type: fit
-    hull: Nightmare
-    fit: TDF_NM_BASIC
-  - type: skills
-    from: Nightmare
-    tier: min
-  - type: tank
-    from: bastion
-  - type: skill
-    from: Cybernetics
-    level: 4
-  - type: skills
-    from: Paladin
-    tier: min
-  - type: fit
-    hull: Paladin
-    fit: TDF_PALLY_ELITE_HYBRID_BASTION
-  - type: skills
-    from: Paladin
-    tier: elite
-
-- name: TDF_PALADIN_ELITE v2
-  description: >
-    PALLY_BASIC > PALLY_ADVANCED > PALLY_ELITE: This skill plan will train you from basic Paladin through to the elite Paladin fit.
-  plan:
-  - type: tank
-    from: min
-  - type: fit
-    hull: Paladin
-    fit: TDF_PALLY_BASIC
-  - type: skills
-    from: Paladin
-    tier: min
-  - type: fit
-    hull: Paladin
-    fit: TDF_PALLY_ADVANCED
-  - type: tank
-    from: bastion
-  - type: skill
-    from: Cybernetics
-    level: 4
-  - type: fit
-    hull: Paladin
-    fit: TDF_PALLY_ELITE_HYBRID_BASTION
-  - type: skills
-    from: Paladin
-    tier: elite
-
-- name: VINDICATOR ELITE
-  description: >
-    Elite skills Vindi plan, simple.
-  plan:
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_ELITE_HYBRID
-  - type: skills
-    from: Vindicator
-    tier: elite
-
-- name: KRONOS ELITE
-  description: >
-    Elite skills Kronos plan, simple.
-  plan:
-  - type: fit
-    hull: Kronos
-    fit: TDF_KRONOS_ELITE_HYBRID_BASTION
-  - type: skills
-    from: Kronos
-    tier: elite
-
-- name: PALADIN ELITE
-  description: >
-    Elite skills Paladin plan, simple.
-  plan:
-  - type: fit
-    hull: Paladin
-    fit: TDF_PALLY_ELITE_HYBRID_BASTION
-  - type: skills
-    from: Paladin
-    tier: elite
-
-- name: TDF_ONEIROS_STARTER
-  description: >
-    This skill plan trains you into the ONEIROS_AFFORDABLE fit. Use this to get started in Oni.
-  plan:
-  - type: tank
-    from: min
-  - type: skills
-    from: Oneiros
-    tier: min
-  - type: fit
-    hull: Oneiros
-    fit: TDF_ONI_HQ_STARTER_AFFORDABLE
-
-- name: TDF_ONEIROS_ELITE
-  description: >
-    This skill plan trains you into elite Oneiros.
-  plan:
-  - type: tank
-    from: min
-  - type: skills
-    from: Oneiros
-    tier: min
-  - type: fit
-    hull: Oneiros
-    fit: TDF_ONI_HQ_STARTER
-  - type: fit
-    hull: Oneiros
-    fit: TDF_ONI_HQ_BASIC
-  - type: fit
-    hull: Oneiros
-    fit: TDF_ONI_HQ_ADVANCED
-  - type: fit
-    hull: Oneiros
-    fit: TDF_ONI_HQ_ELITE
-  - type: skills
-    from: Oneiros
-    tier: elite
-
-- name: TDF_GUARDIAN_BASIC
-  description: >
-    This skill plan trains you into the GUARDIAN_BASIC fit. Use this to get started in Guardian.
-  plan:
-  - type: tank
-    from: min
-  - type: skills
-    from: Guardian
-    tier: min
   - type: fit
     hull: Guardian
-    fit: TDF_GUARD_HQ_BASIC
+    fit: VED_GUARDIAN
 
-- name: TDF_GUARDIAN_ELITE
+- name: Loki (Vedmak fleet)
   description: >
-    This skill plan trains you into elite Guardian.
+    VED_LOKI > VED_LOKI_FC: The booster.
   plan:
-  - type: tank
-    from: min
-  - type: skills
-    from: Guardian
-    tier: min
+  - type: fit
+    hull: Loki
+    fit: VED_LOKI
+  - type: fit
+    hull: Loki
+    fit: VED_LOKI_FC
+
+- name: Tempest (Tempest fleet)
+  description: >
+    T_TEMPEST: The rust bucket.
+  plan:
+  - type: fit
+    hull: Tempest
+    fit: T_TEMPEST
+
+- name: Guardian (Tempest fleet)
+  description: >
+    T_GUARDIAN: The savior.
+  plan:
   - type: fit
     hull: Guardian
-    fit: TDF_GUARD_HQ_ADVANCED
+    fit: T_GUARDIAN
+
+- name: Everything
+  description: >
+    Not a fit, but combining all fits into a single skill queue.
+  plan:
+  - type: fit
+    hull: Vedmak
+    fit: VED_VEDMAK
+  - type: fit
+    hull: Tempest
+    fit: T_TEMPEST
   - type: fit
     hull: Guardian
-    fit: TDF_GUARD_HQ_ELITE
-  - type: skills
-    from: Guardian
-    tier: elite
-
-- name: TDF_NESTOR
-  description: >
-    This skill plan trains you into elite Nestor.
-  plan:
-  - type: skills
-    from: Nestor
-    tier: min
-  - type: fit
-    hull: Nestor
-    fit: TDF_NESTOR_HQ_6REP_ELITE_HYBRID
-  - type: skills
-    from: Nestor
-    tier: elite
-
-- name: TDF_EOS
-  description: >
-    TDF's primary booster. Elite level skills.
-  plan:
-  - type: skills
-    from: Eos
-    tier: min
-  - type: fit
-    hull: Eos
-    fit: TDF_EOS
-  - type: skills
-    from: Eos
-    tier: elite
-
-- name: TDF_DAMNATION
-  description: >
-    TDF's secondary booster. Elite level skills.
-  plan:
-  - type: skills
-    from: Damnation
-    tier: min
-  - type: fit
-    hull: Damnation
-    fit: TDF_DAMNATION
-  - type: skills
-    from: Damnation
-    tier: elite
-
-- name: TDF_EVERYTHING
-  description: >
-    Train the entire TDF doctrine, including boosters! Not really a serious skill plan. Trains everything to Elite Gold level.
-  plan:
-  - type: tank
-    from: min
-  - type: fit
-    hull: Vindicator
-    fit: TDF_VINDI_ELITE_HYBRID
-  - type: fit
-    hull: Kronos
-    fit: TDF_KRONOS_ELITE_HYBRID_BASTION
-  - type: fit
-    hull: Paladin
-    fit: TDF_PALLY_ELITE_HYBRID_BASTION
-  - type: fit
-    hull: Nightmare
-    fit: TDF_NM_ADVANCED_HYBRID
-  - type: fit
-    hull: Oneiros
-    fit: TDF_ONI_HQ_ELITE
+    fit: VED_GUARDIAN
   - type: fit
     hull: Guardian
-    fit: TDF_GUARD_HQ_ELITE
+    fit: T_GUARDIAN
   - type: fit
-    hull: Nestor
-    fit: TDF_NESTOR_HQ_6REP_ELITE_HYBRID
-
-  - type: skills
-    from: Vindicator
-    tier: elite
-  - type: skills
-    from: Kronos
-    tier: elite
-  - type: skills
-    from: Paladin
-    tier: elite
-  - type: skills
-    from: Nightmare
-    tier: elite
-  - type: skills
-    from: Oneiros
-    tier: elite
-  - type: skills
-    from: Guardian
-    tier: elite
-  - type: skills
-    from: Nestor
-    tier: elite
-
-  - type: skills
-    from: Vindicator
-    tier: gold
-  - type: skills
-    from: Kronos
-    tier: gold
-  - type: skills
-    from: Paladin
-    tier: gold
-  - type: skills
-    from: Nightmare
-    tier: elite
-  - type: skills
-    from: Oneiros
-    tier: gold
-  - type: skills
-    from: Guardian
-    tier: gold
-  - type: skills
-    from: Nestor
-    tier: gold
-
+    hull: Loki
+    fit: VED_LOKI
   - type: fit
-    hull: Eos
-    fit: TDF_EOS
-  - type: fit
-    hull: Damnation
-    fit: TDF_DAMNATION
-  - type: skills
-    from: Eos
-    tier: elite
-  - type: skills
-    from: Damnation
-    tier: elite
-  - type: skills
-    from: Eos
-    tier: gold
-  - type: skills
-    from: Damnation
-    tier: gold
+    hull: Loki
+    fit: VED_LOKI_FC

@@ -105,7 +105,7 @@ export function Xup() {
                   )
                 ).finally((evt) => setIsSubmitting(false));
               }}
-              disabled={eft.trim().length < 50 || !eft.startsWith("[") || isSubmitting}
+              disabled={eft.trim().length < 4 || !eft.startsWith("[") || isSubmitting}
             >
               X-up
             </Button>

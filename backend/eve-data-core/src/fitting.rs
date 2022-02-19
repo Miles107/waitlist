@@ -146,7 +146,8 @@ impl Fitting {
                     section += 1;
                 } else {
                     let mut pieces = line.split(" x");
-                    let type_name = pieces.next().unwrap(); // 1st elmt
+                    let mut pieces_charges = pieces.next().unwrap().split(", "); // 1st elmt
+                    let type_name = pieces_charges.next().unwrap(); // 1st elmt
                     let type_id = TypeDB::id_of(type_name)?;
 
                     let (count, stacked) = match pieces.next() {

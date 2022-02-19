@@ -118,7 +118,7 @@ export function Menu({ onChangeCharacter, theme, setTheme }) {
                 </InputGroup>
               )}
               <InputGroup>
-                <AButton title="Discord" href="https://discord.gg/YTysdbb">
+                <AButton title="Discord" href="https://pochven.forrester.dev/">
                   <FontAwesomeIcon icon={faDiscord} />
                 </AButton>
                 <EventNotifier />

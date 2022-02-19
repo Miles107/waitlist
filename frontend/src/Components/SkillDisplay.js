@@ -167,52 +167,33 @@ export function SkillDisplay({ characterId, ship, setShip = null, filterMin = fa
       {setShip != null && (
         <Buttons style={{ marginBottom: "1em" }}>
           <InputGroup>
-            <Button active={ship === "Vindicator"} onClick={(evt) => setShip("Vindicator")}>
-              Vindicator
+            <Button active={ship === "Vedmak"} onClick={(evt) => setShip("Vedmak")}>
+              Vedmak
             </Button>
-            <Button active={ship === "Kronos"} onClick={(evt) => setShip("Kronos")}>
-              Kronos
-            </Button>
-            <Button active={ship === "Nightmare"} onClick={(evt) => setShip("Nightmare")}>
-              Nightmare
-            </Button>
-            <Button active={ship === "Paladin"} onClick={(evt) => setShip("Paladin")}>
-              Paladin
+            <Button active={ship === "Tempest"} onClick={(evt) => setShip("Tempest")}>
+              Tempest
             </Button>
           </InputGroup>
           <InputGroup>
-            <Button active={ship === "Oneiros"} onClick={(evt) => setShip("Oneiros")}>
-              Oneiros
-            </Button>
             <Button active={ship === "Guardian"} onClick={(evt) => setShip("Guardian")}>
               Guardian
-            </Button>
-            <Button active={ship === "Nestor"} onClick={(evt) => setShip("Nestor")}>
-              Nestor
             </Button>
           </InputGroup>
           <InputGroup>
             <Button active={ship === "Eos"} onClick={(evt) => setShip("Eos")}>
               Eos
             </Button>
-            <Button active={ship === "Damnation"} onClick={(evt) => setShip("Damnation")}>
-              Damnation
+            <Button active={ship === "Loki"} onClick={(evt) => setShip("Loki")}>
+              Loki
             </Button>
           </InputGroup>
         </Buttons>
       )}
 
-      {ship === "Nestor" || ship === "Guardian" || ship === "Oneiros" ? (
-        <div style={{ marginBottom: "1em" }}>
-          Legend: <Badge variant="danger">Required</Badge> <Badge variant="warning">Basic</Badge>{" "}
-          <Badge variant="secondary">Elite</Badge> <Badge variant="success">Elite GOLD</Badge>
-        </div>
-      ) : (
-        <div style={{ marginBottom: "1em" }}>
-          Legend: <Badge variant="danger">Starter</Badge> <Badge variant="warning">Basic</Badge>{" "}
-          <Badge variant="secondary">Elite</Badge> <Badge variant="success">Elite GOLD</Badge>
-        </div>
-      )}
+      <div style={{ marginBottom: "1em" }}>
+        Legend: <Badge variant="danger">Required</Badge> <Badge variant="warning">Basic</Badge>{" "}
+        <Badge variant="secondary">Elite</Badge> <Badge variant="success">Elite GOLD</Badge>
+      </div>
 
       {skills ? (
         <SkillList mySkills={skills} shipName={ship} filterMin={filterMin} />

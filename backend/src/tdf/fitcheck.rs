@@ -63,13 +63,11 @@ impl<'a> FitChecker<'a> {
         checker.check_skill_reqs()?;
         checker.check_module_skills()?;
         checker.check_fit();
-        checker.check_fit_reqs();
-        checker.check_fit_implants()?;
-        checker.check_time_in_fleet();
-        checker.check_logi_implants();
+//        checker.check_fit_reqs();
+        checker.check_fit_implants();
+//        checker.check_time_in_fleet();
         checker.set_category();
-        checker.add_implant_tag();
-        checker.add_snowflake_tags();
+//        checker.add_implant_tag();
         checker.merge_tags();
 
         checker.finish()
@@ -103,7 +101,7 @@ impl<'a> FitChecker<'a> {
         };
 
         if skill_tier == "starter" {
-            self.tags.insert("STARTER-SKILLS");
+            self.tags.insert("STARTER");
         } else if skill_tier == "gold" {
             self.tags.insert("GOLD-SKILLS");
         } else if skill_tier == "elite" {
@@ -132,14 +130,6 @@ impl<'a> FitChecker<'a> {
         Ok(())
     }
 
-    fn check_logi_implants(&mut self) {
-        if (self.fit.hull == type_id!("Nestor") || self.fit.hull == type_id!("Guardian"))
-            && !self.pilot.implants.contains(&type_id!("% EM-806"))
-        {
-            self.tags.insert("NO-EM-806");
-        }
-    }
-
     fn check_fit(&mut self) {
         if let Some((doctrine_fit, diff)) = fitmatch::find_fit(self.fit) {
             self.doctrine_fit = Some(doctrine_fit);
@@ -152,9 +142,9 @@ impl<'a> FitChecker<'a> {
                 self.approved = false;
             }
 
-            if fit_ok && doctrine_fit.name.contains("ELITE") {
-                self.tags.insert("ELITE-FIT");
-            }
+//            if fit_ok && doctrine_fit.name.contains("ELITE") {
+//                self.tags.insert("ELITE-FIT");
+//            }
 
             self.analysis = Some(PubAnalysis {
                 name: doctrine_fit.name.clone(),
@@ -171,18 +161,20 @@ impl<'a> FitChecker<'a> {
     fn check_fit_reqs(&mut self) {
         let comp_reqs = match self.doctrine_fit {
             Some(fit) => {
-                if fit.name.contains("STARTER") {
-                    2
-                } else {
+//                if fit.name.contains("STARTER") {
+//                    2
+//                } else {
                     4
-                }
+//                }
             }
             None => 4,
         };
 
         let have_comps = min(
             min(
-                self.pilot.skills.get(type_id!("EM Armor Compensation")),
+                self.pilot
+                    .skills
+                    .get(type_id!("EM Armor Compensation")),
                 self.pilot
                     .skills
                     .get(type_id!("Thermal Armor Compensation")),
@@ -239,39 +231,34 @@ impl<'a> FitChecker<'a> {
         }
     }
 
-    fn check_fit_implants(&mut self) -> Result<(), FitError> {
-        if let Some(doctrine_fit) = self.doctrine_fit {
-            let mut implants_ok = true;
-            if doctrine_fit.name.contains("HYBRID") || doctrine_fit.name.contains("AMULET") {
-                let implants = [
-                    type_id!("High-grade Amulet Alpha"),
-                    type_id!("High-grade Amulet Beta"),
-                    type_id!("High-grade Amulet Delta"),
-                    type_id!("High-grade Amulet Epsilon"),
-                    type_id!("High-grade Amulet Gamma"),
-                ];
-                for implant in implants {
-                    if !self.pilot.implants.contains(&implant) {
-                        implants_ok = false;
-                    }
+    fn check_fit_implants(&mut self) {
+            let has_armor_burst = self.fit.modules.get(&type_id!("Armor Command Burst II")).copied().unwrap_or(0) > 0;
+            let has_skirm_burst = self.fit.modules.get(&type_id!("Skirmish Command Burst II")).copied().unwrap_or(0) > 0;
+            let has_burst = has_armor_burst || has_skirm_burst;
+            let has_armor_link = self.pilot.implants.contains(&type_id!("Armored Command Mindlink"));
+            let has_skirm_link = self.pilot.implants.contains(&type_id!("Skirmish Command Mindlink"));
+            
+            if has_skirm_burst {
+                if has_armor_burst && has_skirm_link {
+                    self.approved = false;
+                    self.tags.insert("Armor+Skirm Burst, but Skirmish Mindlink");
+                    return;
+                } else if !has_skirm_link {
+                    self.approved = false;
+                    self.tags.insert("MISSING-SKIRMISH-MINDLINK");
+//                    self.errors.push("Missing Skirmish Mindlink!".to_string());
                 }
             }
-            if doctrine_fit.name.contains("AMULET")
-                && !self
-                    .pilot
-                    .implants
-                    .contains(&type_id!("High-grade Amulet Omega"))
-            {
-                implants_ok = false;
+            if has_armor_burst {
+                if has_skirm_burst && has_armor_link {
+                    self.approved = false;
+                    self.tags.insert("Armor+Skirm Burst, but Armor Mindlink");
+                } else if !has_armor_link {
+                    self.approved = false;
+                    self.tags.insert("MISSING-ARMOR-MINDLINK");
+//                    self.errors.push("Missing Armor Mindlink!".to_string());
+                }
             }
-
-            if !implants_ok {
-                self.approved = false;
-                self.tags.insert("NO-IMPLANTS");
-            }
-        }
-
-        Ok(())
     }
 
     fn add_implant_tag(&mut self) {
@@ -282,25 +269,8 @@ impl<'a> FitChecker<'a> {
 
     fn set_category(&mut self) {
         let mut category =
-            categories::categorize(self.fit).unwrap_or_else(|| "starter".to_string());
-        if self.tags.contains("STARTER-SKILLS") {
-            if category == "logi" {
-                self.approved = false;
-            } else {
-                category = "starter".to_string();
-            }
-        }
+            categories::categorize(self.fit).unwrap_or_else(|| "damage".to_string());
         self.category = Some(category);
-    }
-
-    fn add_snowflake_tags(&mut self) {
-        if self.pilot.access_keys.contains("waitlist-tag:HQ-FC") {
-            self.tags.insert("HQ-FC");
-        } else if self.pilot.access_keys.contains("waitlist-tag:LOGI")
-            && self.fit.hull == type_id!("Nestor")
-        {
-            self.tags.insert("LOGI");
-        }
     }
 
     fn merge_tags(&mut self) {

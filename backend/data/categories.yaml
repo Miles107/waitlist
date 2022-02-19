@@ -1,66 +1,118 @@
 categories:
   - id: logi
     name: Logistics
-  - id: cqc
-    name: CQC
-  - id: sniper
-    name: Sniper
-  - id: bastion
-    name: Bastion
-  - id: starter
-    name: Starter
+  - id: damage
+    name: Damage
+  - id: command
+    name: Command
+  - id: scout
+    name: Scouts
 
 rules:
   # Logi
-  - item: Oneiros
-    category: logi
   - item: Guardian
     category: logi
-  - item: Nestor
-    category: logi
-  # Starter tank
-  - item: Multispectrum Energized Membrane II
-    meta: le
-    category: starter
-  - item: Centum C-Type Explosive Energized Membrane
-    meta: le
-    category: starter
-  - item: Corpum C-Type Explosive Energized Membrane
-    meta: le
-    category: starter
-  # Fleet annoyances
-  - item: Core X-Type 500MN Microwarpdrive
-    meta: lt
-    category: starter
-  # Starter damage mods
-  - item: Magnetic Field Stabilizer II
-    meta: le
-    category: starter
-  - item: Stasis Webifier II
-    meta: le
-    category: starter
-  - item: Modal Mega Neutron Particle Accelerator I
-    category: starter
-  - item: Tachyon Modulated Energy Beam I
-    category: starter
-  - item: Drone Link Augmentor I
-    category: starter
-  - item: Heat Sink II
-    meta: le
-    category: starter
-  - item: Mega Modulated Pulse Energy Beam I
-    category: starter
-  # Bastion
-  - item: Bastion Module I
-    category: bastion
   # Ships
-  - item: Megathron
-    category: starter
-  - item: Vindicator
-    category: cqc
-  - item: Paladin
-    category: sniper
-  - item: Nightmare
-    category: sniper
-  - item: Kronos
-    category: cqc
+  - item: Tempest
+    category: damage
+  - item: Vedmak
+    category: damage
+  # Command
+  - item: Loki
+    category: command
+  - item: Eos
+    category: command
+  # Scouts
+  - item: Caldari Shuttle
+    category: scouts
+  - item: Minmatar Shuttle
+    category: scouts
+  - item: Amarr Shuttle
+    category: scouts
+  - item: Gallente Shuttle
+    category: scouts
+  - item: Crucifier
+    category: scouts
+  - item: Griffin
+    category: scouts
+  - item: Maulus
+    category: scouts
+  - item: Vigil
+    category: scouts
+  - item: Magnate
+    category: scouts
+  - item: Heron
+    category: scouts
+  - item: Imicus
+    category: scouts
+  - item: Probe
+    category: scouts
+  - item: Executioner
+    category: scouts
+  - item: Condor
+    category: scouts
+  - item: Atron
+    category: scouts
+  - item: Slasher
+    category: scouts
+  - item: Punisher
+    category: scouts
+  - item: Merlin
+    category: scouts
+  - item: Incursus
+    category: scouts
+  - item: Breacher
+    category: scouts
+  - item: Tormentor
+    category: scouts
+  - item: Kestrel
+    category: scouts
+  - item: Tristan
+    category: scouts
+  - item: Rifter
+    category: scouts
+  - item: Inquisitor
+    category: scouts
+  - item: Bantam
+    category: scouts
+  - item: Navitas
+    category: scouts
+  - item: Burst
+    category: scouts
+  - item: Venture
+    category: scouts
+  - item: Astero
+    category: scouts
+  - item: Malediction
+    category: scouts
+  - item: Crow
+    category: scouts
+  - item: Ares
+    category: scouts
+  - item: Stiletto
+    category: scouts
+  - item: Crusader
+    category: scouts
+  - item: Raptor
+    category: scouts
+  - item: Taranis
+    category: scouts
+  - item: Claw
+    category: scouts
+  - item: Anathema
+    category: scouts
+  - item: Buzzard
+    category: scouts
+  - item: Helios
+    category: scouts
+  - item: Cheetah
+    category: scouts
+  - item: Purifier
+    category: scouts
+  - item: Manticore
+    category: scouts
+  - item: Nemesis
+    category: scouts
+  - item: Hound
+    category: scouts
+

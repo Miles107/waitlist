@@ -28,12 +28,12 @@ import { Title } from "../../Components/Page";
 import { Button, InputGroup } from "../../Components/Form";
 
 const tagBadges = {
-  "WARPSPEED1-10": ["red", "W", "Warp Speed Implants"],
-  "HYBRID1-10": ["red", "H", "Hybrid Implants"],
-  "AMULET1-10": ["red", "A", "Amulet Implants"],
+//  "WARPSPEED1-10": ["red", "W", "Warp Speed Implants"],
+//  "HYBRID1-10": ["red", "H", "Hybrid Implants"],
+//  "AMULET1-10": ["red", "A", "Amulet Implants"],
   ELITE: ["yellow", "E", "Elite"],
   "STARTER-SKILLS": ["neutral", "S", "Starter skills"],
-  "HQ-FC": ["blue", "H", "HQ FC"],
+//  "HQ-FC": ["blue", "H", "HQ FC"],
   LOGI: ["green", "L", "Logi Specialist"],
 };
 
