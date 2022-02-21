@@ -115,4 +115,11 @@ rules:
     category: scouts
   - item: Hound
     category: scouts
-
+  - item: Sabre
+    category: scouts
+  - item: Eris
+    category: scouts
+  - item: Heretic
+    category: scouts
+  - item: Flycatcher
+    category: scouts
