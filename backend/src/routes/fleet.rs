@@ -132,6 +132,7 @@ struct FleetMembersMember {
     name: Option<String>,
     ship: Hull,
     wl_category: Option<String>,
+    solar_system_id: i32,
 }
 
 #[get("/api/fleet/members?<character_id>")]
@@ -186,6 +187,7 @@ async fn fleet_members(
                     .get(&member.squad_id)
                     .and_then(|s| category_lookup.get(s.as_str()))
                     .map(|s| s.to_string()),
+                solar_system_id: member.solar_system_id,
             })
             .collect(),
     }))

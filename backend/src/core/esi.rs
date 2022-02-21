@@ -425,6 +425,7 @@ pub mod fleet_members {
         pub character_id: i64,
         pub ship_type_id: TypeID,
         pub squad_id: i64,
+        pub solar_system_id: i32,
     }
 
     pub async fn get(

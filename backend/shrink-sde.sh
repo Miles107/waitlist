@@ -30,4 +30,8 @@ create index dgmTypeAttributes_typeID on dgmTypeAttributes (typeID);
 
 create table dgmTypeEffects as select * from ext.dgmTypeEffects where effectID IN (11,12,13,2663);
 create index dgmTypeEffects_typeID on dgmTypeEffects (typeID);
+
+create table mapSolarSystems as select * from ext.mapSolarSystems;
+create index mapSolarSystems_solarSystemID on mapSolarSystems (solarSystemID);
+create index mapSolarSystems_solarSystemName on mapSolarSystems (solarSystemName);
 "
